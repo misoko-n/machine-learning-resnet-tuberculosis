@@ -2,7 +2,7 @@
 
 ## Overview
 
-This notebook (`resnet50_v6.ipynb`) is my group's undergraduate thesis prototype. It classifies chest X-rays as Normal or Tuberculosis, and the best run it shows reached 82.4% test accuracy (AUC 0.897).
+This notebook (`resnet50_v6.ipynb`) is my group's undergraduate thesis prototype. It classifies chest X-rays as Normal or Tuberculosis, and the best run it shows reached 82.86% test accuracy (AUC 0.87).
 
 - **Model:** ResNet50 pretrained on ImageNet, with its weights frozen. A small dense head sits on top: 128 → 256 → 512 units, dropout 0.3, and a sigmoid output.
 - **Explainability:** Grad-CAM heatmaps on the last convolutional block (`conv5_block3_out`) show which lung regions drove each prediction.
@@ -100,3 +100,12 @@ The biggest problem is that the outputs and the code don't match: the code train
 2. Download the datasets listed under Data.
 3. Edit the path constants in the configuration cell (cell 3): `DATASET_PATH`, `SEGMENTED_DATASET` and `MODEL_SAVEPATH`.
 4. Run the cells in order from the top. Skip the cells that load model files not included here (cells 18, 29 and 34).
+
+##Sample results and Verifications
+Sample output 
+<img width="450" height="485" alt="image" src="https://github.com/user-attachments/assets/6008aa07-aa34-41c5-8abc-d2ea13a1ff39" />
+
+Confusion Matrix
+<img width="646" height="645" alt="image" src="https://github.com/user-attachments/assets/e15d0178-3bd1-43ce-837a-c1a5f1e8ac2e" />
+
+
